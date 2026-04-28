@@ -2,7 +2,7 @@
 const defaultProfile = {
     name: "Billapati Yashwanth Reddy",
     role: "Computer Science Student | AI Enthusiast | Innovation Ambassador",
-    description: "B.Tech Computer Science student (2028) at Vignan Institute of Technology and Science. Passionate about AI, hackathons, and building innovative tech solutions. Innovation Ambassador recognized by Ministry of Education & AICTE.",
+    description: "B.Tech Computer Science student (2028) at Vignan Institute of Technology and Science. Actively solving DSA problems, strengthening logical thinking, and building real-world projects. Passionate about AI, hackathons, and scalable software. Innovation Ambassador recognized by Ministry of Education & AICTE.",
     location: "Hyderabad, India",
     email: "yashwanthreddybillapati@gmail.com",
     phone: "+91 9441819445"
@@ -93,7 +93,7 @@ const defaultData = {
 };
 
 // Data version — bump this number whenever you change defaults above
-const DATA_VERSION = 3;
+const DATA_VERSION = 4;
 
 // Check local storage: if version mismatch, clear stale cache
 const storedVersion = localStorage.getItem('portfolio_version');
