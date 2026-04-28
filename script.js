@@ -64,7 +64,7 @@ const defaultData = {
             tags: ['HTML/CSS', 'JavaScript', 'UI/UX'],
             icon: 'fa-briefcase',
             live: 'https://protofolio-five-phi.vercel.app',
-            github: 'https://github.com/yashwanthbillapati-ctrl/Yashwanth-Portfolio'
+            github: 'https://github.com/yashwanth2307/Yashwanth-Portfolio'
         },
         {
             title: 'Vacanza Holidays',
