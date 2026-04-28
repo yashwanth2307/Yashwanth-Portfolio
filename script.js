@@ -93,7 +93,7 @@ const defaultData = {
 };
 
 // Data version — bump this number whenever you change defaults above
-const DATA_VERSION = 2;
+const DATA_VERSION = 3;
 
 // Check local storage: if version mismatch, clear stale cache
 const storedVersion = localStorage.getItem('portfolio_version');
