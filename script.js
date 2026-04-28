@@ -1,8 +1,8 @@
 // Default Base Data Structure
 const defaultProfile = {
     name: "Billapati Yashwanth Reddy",
-    role: "Software Developer & Computer Science Student",
-    description: "B.Tech Computer Science student (2028) with a strong foundation in Data Structures, Algorithms, and Object-Oriented Programming. Passionate about solving real-world problems and building scalable software systems.",
+    role: "Computer Science Student | AI Enthusiast | Innovation Ambassador",
+    description: "B.Tech Computer Science student (2028) at Vignan Institute of Technology and Science. Passionate about AI, hackathons, and building innovative tech solutions. Innovation Ambassador recognized by Ministry of Education & AICTE.",
     location: "Hyderabad, India",
     email: "yashwanthreddybillapati@gmail.com",
     phone: "+91 9441819445"
@@ -43,8 +43,8 @@ const defaultData = {
             description: 'Developing a centralized platform to improve communication between students, faculty, and administration. Designed features for announcements, academic updates, and event notifications.',
             tags: ['Communication', 'Platform', 'Campus'],
             icon: 'fa-university',
-            live: 'https://your-link.com',
-            github: 'https://github.com/your-repo'
+            live: '',
+            github: 'https://github.com/yashwanth2307/Vignan_connect'
         },
         {
             title: 'AgriConnect',
@@ -53,18 +53,18 @@ const defaultData = {
             description: 'Led development of a platform providing crop guidance and agricultural insights. Secured 2nd Prize at TKR Hack Conquest 2.0.',
             tags: ['AI', 'Agriculture', 'Marketplace'],
             icon: 'fa-leaf',
-            live: 'https://your-link.com',
-            github: 'https://github.com/your-repo'
+            live: '',
+            github: 'https://github.com/yashwanth2307/AgriConnect'
         },
         {
             title: 'Portfolio Website',
             subtitle: 'Dynamic Web Experience',
-            role: 'Frontend Developer',
+            role: 'Developer',
             description: 'Developed a personal portfolio using HTML, CSS, and JavaScript with premium animations and responsive design.',
             tags: ['HTML/CSS', 'JavaScript', 'UI/UX'],
             icon: 'fa-briefcase',
-            live: 'https://your-link.com',
-            github: 'https://github.com/your-repo'
+            live: 'https://protofolio-five-phi.vercel.app',
+            github: 'https://github.com/yashwanthbillapati-ctrl/Yashwanth-Portfolio'
         },
         {
             title: 'Vacanza Holidays',
@@ -74,7 +74,7 @@ const defaultData = {
             tags: ['Open Source', 'GSoC', 'Git'],
             icon: 'fa-code-branch',
             live: '',
-            github: ''
+            github: 'https://github.com/yashwanth2307/holidays'
         }
     ],
     achievements: [
@@ -92,9 +92,19 @@ const defaultData = {
     ]
 };
 
-// Check local storage
-let UserProfile = JSON.parse(localStorage.getItem('portfolio_profile')) || defaultProfile;
-let Data = JSON.parse(localStorage.getItem('portfolio_data')) || defaultData;
+// Data version — bump this number whenever you change defaults above
+const DATA_VERSION = 2;
+
+// Check local storage: if version mismatch, clear stale cache
+const storedVersion = localStorage.getItem('portfolio_version');
+if (storedVersion !== String(DATA_VERSION)) {
+    localStorage.removeItem('portfolio_profile');
+    localStorage.removeItem('portfolio_data');
+    localStorage.setItem('portfolio_version', String(DATA_VERSION));
+}
+
+let UserProfile = JSON.parse(localStorage.getItem('portfolio_profile')) || JSON.parse(JSON.stringify(defaultProfile));
+let Data = JSON.parse(localStorage.getItem('portfolio_data')) || JSON.parse(JSON.stringify(defaultData));
 
 function renderHero() {
     const el = (id) => document.getElementById(id);
